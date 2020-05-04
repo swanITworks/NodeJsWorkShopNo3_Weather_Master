@@ -1,11 +1,16 @@
-import get from 'lodash.get';
+const lodash = require('lodash');
+const get = lodash.get;
 
-import { emptyWeatherObject } from './empty-weather-object.js';
+const emptyWeatherObject = require('./empty-weather-object.js');
 
-export class OpenWeatherMapAdapter {
+class OpenWeatherMapAdapter {
   constructor(openWeatherMapAdapter) {
     this.openWeatherMapAdapter = openWeatherMapAdapter;
   }
 
   async getWeather(cityName) {}
+}
+
+module.exports = {
+  OpenWeatherMapAdapter: OpenWeatherMapAdapter,
 }

@@ -1,6 +1,6 @@
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
-export class OpenWeatherMapApiService {
+class OpenWeatherMapApiService {
   constructor(iconsBaseUrl, apiBaseUrl, apiKey) {
     this.iconsBaseUrl = iconsBaseUrl;
     this.apiBaseUrl = apiBaseUrl;
@@ -16,7 +16,7 @@ export class OpenWeatherMapApiService {
   }
 }
 
-export class OpenWeatherMapMockService {
+class OpenWeatherMapMockService {
   async getWeather(cityName) {
     return response.json();
   }
@@ -26,4 +26,9 @@ export class OpenWeatherMapMockService {
       ? `https://openweathermap.org/img/wn/${iconCode}@2x.png`
       : null;
   }
+}
+
+module.exports ={
+  OpenWeatherMapApiService: OpenWeatherMapApiService,
+  OpenWeatherMapMockService: OpenWeatherMapMockService,
 }

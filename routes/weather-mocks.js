@@ -1,4 +1,4 @@
-import express from 'express';
-import { getDataFromFile } from '../utils/utils.js';
+const express = require('express');
+const getDataFromFile = require('../utils/utils.js');
 
-export const router = express.Router();
+module.exports = express.Router();

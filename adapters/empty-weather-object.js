@@ -1,4 +1,4 @@
-export const emptyWeatherObject = {
+const emptyWeatherObject = {
   lastObservationTime: null,
   location: {
     cityName: null,
@@ -13,3 +13,5 @@ export const emptyWeatherObject = {
     iconUrl: null,
   },
 };
+
+module.exports = emptyWeatherObject

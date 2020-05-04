@@ -1,6 +1,6 @@
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
-export class WeatherBitApiService {
+class WeatherBitApiService {
   constructor(iconsBaseUrl, apiBaseUrl, apiKey) {
     this.iconsBaseUrl = iconsBaseUrl;
     this.apiBaseUrl = apiBaseUrl;
@@ -16,7 +16,7 @@ export class WeatherBitApiService {
   }
 }
 
-export class WeatherBitMockService {
+class WeatherBitMockService {
   async getCurrent(cityName) {
     return response.json();
   }
@@ -26,4 +26,9 @@ export class WeatherBitMockService {
       ? `https://weatherbit.io/static/img/icons/${iconCode}.png`
       : null;
   }
+}
+
+module.exports = {
+  WeatherBitApiService: WeatherBitApiService,
+  WeatherBitMockService: WeatherBitMockService,
 }

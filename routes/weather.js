@@ -1,25 +1,17 @@
-import express from 'express';
-import dotenv from 'dotenv';
+const express = require('express');
+const router = express.Router();
+const dotenv = require('dotenv');
 dotenv.config();
 
-import { OpenWeatherMapAdapter } from '../adapters/open-weather-map-adapter.js';
-import { WeatherBitAdapter } from '../adapters/weather-bit-adapter.js';
-import { AccuWeatherAdapter } from '../adapters/accu-weather-adapter.js';
+const { OpenWeatherMapAdapter } = require('../adapters/open-weather-map-adapter.js');
+const { WeatherBitAdapter } = require('../adapters/weather-bit-adapter.js');
+const { AccuWeatherAdapter } = require('../adapters/accu-weather-adapter.js');
 
-import {
-  OpenWeatherMapApiService,
-  OpenWeatherMapMockService,
-} from '../api-services/open-weather-map-api-service.js';
-import {
-  WeatherBitApiService,
-  WeatherBitMockService,
-} from '../api-services/weather-bit-api-service.js';
-import {
-  AccuWeatherApiService,
-  AccuWeatherMockService,
-} from '../api-services/accu-weather-api-service.js';
+const { OpenWeatherMapApiService, OpenWeatherMapMockService } = require('../api-services/open-weather-map-api-service.js');
+const { WeatherBitApiService, WeatherBitMockService } = require('../api-services/weather-bit-api-service.js');
+const { AccuWeatherApiService, AccuWeatherMockService} = require('../api-services/accu-weather-api-service.js');
 
-export const router = express.Router();
+module.exports = express.Router();
 
 // === APPLICATION BOOTSTRAP
 

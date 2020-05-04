@@ -1,6 +1,6 @@
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
-export class AccuWeatherApiService {
+class AccuWeatherApiService {
   constructor(iconsBaseUrl, apiBaseUrl, apiKey) {
     this.iconsBaseUrl = iconsBaseUrl;
     this.apiBaseUrl = apiBaseUrl;
@@ -41,7 +41,7 @@ export class AccuWeatherApiService {
   }
 }
 
-export class AccuWeatherMockService {
+class AccuWeatherMockService {
   async getCurrentConditions(locationId) {
     return response.json();
   }
@@ -60,4 +60,9 @@ export class AccuWeatherMockService {
       ? `https://developer.accuweather.com/sites/default/files/${fullIconCode}-s.png`
       : null;
   }
+}
+
+module.exports = {
+  AccuWeatherApiService: AccuWeatherApiService,
+  AccuWeatherMockService: AccuWeatherMockService,
 }

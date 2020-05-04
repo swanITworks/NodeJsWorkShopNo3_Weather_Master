@@ -1,12 +1,17 @@
-import moment from 'moment-timezone';
-import get from 'lodash.get';
+const moment = require('moment-timezone');
+const lodash = require('lodash');
+const get = lodash.get;
 
-import { emptyWeatherObject } from './empty-weather-object.js';
+const emptyWeatherObject = require('./empty-weather-object.js');
 
-export class WeatherBitAdapter {
+class WeatherBitAdapter {
   constructor(weatherBitApiService) {
     this.weatherBitApiService = weatherBitApiService;
   }
 
   async getWeather(cityName) {}
+}
+
+module.exports = {
+  WeatherBitAdapter: WeatherBitAdapter
 }
