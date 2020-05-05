@@ -14,7 +14,9 @@ const onWeatherSearchSubmit = (event) => {
   const mainElement = document.querySelector('#main');
   render(loadingTemplate(), mainElement);
 
-  fetch(/* Add your code here */)
+  const request = 'http://localhost:3000/';
+
+  fetch(request)
     .then((response) => response.json())
     .then((weatherData) => {
       render(weatherDataTemplate(weatherData), mainElement);

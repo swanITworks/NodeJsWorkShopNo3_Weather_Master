@@ -1,6 +1,6 @@
 const express = require('express');
-const mocks = require('./routes/weather-mocks.js');
-const weather = require('./routes/weather.js');
+const { mocks } = require('./routes/weather-mocks.js');
+const { weather } = require('./routes/weather.js');
 const dotenv = require('dotenv');
 
 const app = express();
